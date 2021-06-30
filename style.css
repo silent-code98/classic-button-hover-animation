@@ -1,0 +1,53 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+}
+
+.button__container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.btn {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    border: 2px solid black;
+    padding: .6rem 2.8rem;
+    position: relative;
+    transition: .3s ease-in-out color;
+    overflow-x: hidden;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.btn::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: .3s ease-in-out left;
+}
+
+.btn:hover::before {
+    left: 0;
+}
